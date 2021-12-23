@@ -1,3 +1,15 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #fff;
+
+  --black-300: #999999;
+  --black-400: #333333;
+  --black-500: #101010;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +17,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  background: var(--black-500);
+  color: var(--white)
 }
