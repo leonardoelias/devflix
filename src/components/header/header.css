@@ -1,5 +1,6 @@
 .header {
   width: 100%;
+  position: fixed;
 }
 .header-container {
   padding: 20px 40px;
