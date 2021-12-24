@@ -59,6 +59,13 @@
   height: 100vh;
 }
 
+.banner-img::before {
+  content: ' ';
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 5vw -10vh 50vh 20vh var(--black-500);
+}
+
 .banner-img img {
   height: 100%;
   width: auto;
