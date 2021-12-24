@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './header.css'
 import img from '../../assets/logo-devflix.png'
 
@@ -9,9 +10,9 @@ export function Header() {
   return (
     <header className="header">
       <div className="header-container">
-        <a href="./" title="Ir para a home do DevFlix">
+        <Link to="/" title="Ir para a home do DevFlix">
           <img src={img} alt="DevFlix" className='header-logo-img' />
-        </a>
+        </Link>
         <button className='header-logo-profile' type="button" onClick={abraOProfile} />
       </div>
     </header>
