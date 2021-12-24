@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import  {MdPlayArrow} from 'react-icons/md'
 import  {BsPlus} from 'react-icons/bs'
 import './banner.css';
@@ -17,10 +18,10 @@ export function Banner(props){
           <p>{data.temporadas} temporada</p>
         </div>
         <div className='banner-acao'>
-          <button type="button" className='banner-button'>
+          <Link to="details" className='banner-button'>
             <MdPlayArrow />
             Assistir
-          </button>
+          </Link>
           <button type="button" className='banner-button banner-button-inverse'>
             <BsPlus />
             Minha lista
