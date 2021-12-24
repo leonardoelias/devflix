@@ -1,4 +1,5 @@
 import {Banner} from '../../components/banner'
+import {Carrosel}  from '../../components/carrosel'
 
 const imageFake = 'https://observatoriodocinema.uol.com.br/wp-content/uploads/2021/11/homem-aranha-3-1.jpg';
 
@@ -16,6 +17,9 @@ export function PaginaInicial() {
   return(
     <div className="pag-inicial">
       <Banner data={filmeDestaque} />
+      <Carrosel title="Originais da DevFlix" />
+      <Carrosel title="Quero ser desenvolvedor Front-end" />
+      <Carrosel title="Não quero ser desenvolvedor Back-end" />
     </div>
   )
 }

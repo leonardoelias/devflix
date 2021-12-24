@@ -1,0 +1,21 @@
+.carrosel {
+  width: 100%;
+  padding: 10px 20px;
+}
+.carrosel-container {
+  display: flex;
+  gap: 8px;
+}
+
+.card {
+  transition: 250ms;
+  position: relative;
+  z-index: 1;
+}
+.card:hover {
+  transform: scale(1.1);
+  z-index: 3;
+}
+/* .card img {
+  transform: scale(1);
+} */
