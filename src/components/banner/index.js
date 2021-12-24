@@ -4,15 +4,17 @@ import './banner.css';
 
 const imageFake = 'https://observatoriodocinema.uol.com.br/wp-content/uploads/2021/11/homem-aranha-3-1.jpg';
 
-export function Banner(){
+export function Banner(props){
+  const {data} = props;
+
   return (
     <section className='banner'>
       <div className='banner-content'>
-        <h1>Nome do filme</h1>
+        <h1>{data.titulo}</h1>
         <div className='banner-info'>
-          <p style={{ color: '#47D268'}}>4 pontos</p>
-          <p>2021</p>
-          <p>1 temporada</p>
+          <p style={{ color: '#47D268'}}>{data.pontos} pontos</p>
+          <p>{data.data_lancamento}</p>
+          <p>{data.temporadas} temporada</p>
         </div>
         <div className='banner-acao'>
           <button type="button" className='banner-button'>
@@ -25,12 +27,12 @@ export function Banner(){
           </button>
         </div>
         <div className='banner-footer'>
-          <h2>Gêneros</h2>
-          <p>laslj;alkdjas</p>
+          <h2>{data.genreo}</h2>
+          <p>{data.descricao}</p>
         </div>
       </div>
       <div className='banner-img'>
-        <img src={imageFake} alt="Banner do filme homen aranha" />
+        <img src={data.imagem} alt="Banner do filme homen aranha" />
       </div>
     </section>
   )

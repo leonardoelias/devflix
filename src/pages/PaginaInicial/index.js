@@ -4,6 +4,7 @@ const imageFake = 'https://observatoriodocinema.uol.com.br/wp-content/uploads/20
 
 const filmeDestaque = {
   titulo: 'Homen Aranha',
+  descricao: 'Depois de ser picado por uma aranha geneticamente modificada, Peter Parker ganha super poderes e as habilidades da aranha para se agarrar a qualquer superfície.',
   pontos: '4',
   data_lancamento: '2020',
   temporadas: '1',

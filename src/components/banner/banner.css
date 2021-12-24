@@ -12,6 +12,7 @@
   flex-direction: column;
   position: relative;
   z-index: 2;
+  max-width: 500px;
 }
 .banner-content h1{
   margin: 0;
