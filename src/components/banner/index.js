@@ -3,8 +3,6 @@ import  {MdPlayArrow} from 'react-icons/md'
 import  {BsPlus} from 'react-icons/bs'
 import './banner.css';
 
-const imageFake = 'https://observatoriodocinema.uol.com.br/wp-content/uploads/2021/11/homem-aranha-3-1.jpg';
-
 export function Banner(props){
   const {data} = props;
 
