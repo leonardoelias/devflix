@@ -16,7 +16,9 @@ export function PaginaInicial() {
     async function result() {
       const res = await request();
 
-      setData(res.results[9])
+      const banner = Math.floor(Math.random() *  res.results.length);
+
+      setData(res.results[banner])
     }
     result()
   }, [])
