@@ -1,6 +1,8 @@
 .carrosel {
   width: 100%;
   padding: 10px 20px;
+  overflow-y: hidden;
+  overflow-x: scroll;
 }
 .carrosel-container {
   display: flex;
@@ -16,6 +18,3 @@
   transform: scale(1.1);
   z-index: 3;
 }
-/* .card img {
-  transform: scale(1);
-} */
