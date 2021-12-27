@@ -69,5 +69,7 @@
 
 .banner-img img {
   height: 100%;
-  width: auto;
+  width: 100%;
+  max-width: 80vw;
+  object-fit: cover;
 }

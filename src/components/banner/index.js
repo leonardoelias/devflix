@@ -6,17 +6,20 @@ import './banner.css';
 export function Banner(props){
   const {data} = props;
 
+  const year = new Date(data.release_date).getFullYear();
+
   return (
     <section className='banner'>
       <div className='banner-content'>
-        <h1>{data.titulo}</h1>
+        <h1>{data.title}</h1>
         <div className='banner-info'>
-          <p style={{ color: '#47D268'}}>{data.pontos} pontos</p>
-          <p>{data.data_lancamento}</p>
-          <p>{data.temporadas} temporada</p>
+          <p style={{ color: '#47D268'}}>{data.vote_average} pontos</p>
+          <p>{year}</p>
+          {/* aperecer temporadas só quando for serie */}
+          {/* <p>{data.temporadas} temporada</p> */}
         </div>
         <div className='banner-acao'>
-          <Link to="details" className='banner-button'>
+          <Link to={`details/${data.id}`} className='banner-button'>
             <MdPlayArrow />
             Assistir
           </Link>
@@ -26,12 +29,12 @@ export function Banner(props){
           </button>
         </div>
         <div className='banner-footer'>
-          <h2>{data.genreo}</h2>
-          <p>{data.descricao}</p>
+          {/* <h2>{data.genreo}</h2> */}
+          <p>{data.overview}</p>
         </div>
       </div>
       <div className='banner-img'>
-        <img src={data.imagem} alt="Banner do filme homen aranha" />
+        <img src={`http://image.tmdb.org/t/p/original/${data.backdrop_path}`} alt="Banner do filme homen aranha" />
       </div>
     </section>
   )
