@@ -11,7 +11,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<PaginaInicial />} />
-        <Route path="details" element={<PaginaDetalhe />} />
+        <Route path="details/:id" element={<PaginaDetalhe />} />
       </Routes>
       <Footer />
     </div>
