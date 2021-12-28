@@ -1,33 +1,43 @@
-import { useState, useEffect } from 'react';
-import {Banner} from '../../components/banner'
-import {Carrosel}  from '../../components/carrosel'
-import {request} from '../../request'
+import { useState, useEffect } from "react";
+import { Banner } from "../../components/banner";
+import { Carrosel } from "../../components/carrosel";
+import { request } from "../../request";
 
 export function PaginaInicial() {
-  const [data, setData] = useState({})
+  const [data, setData] = useState({});
 
   useEffect(() => {
     async function result() {
-      const res = await request('discover/movie');
+      const res = await request("discover/movie");
 
-      const banner = Math.floor(Math.random() *  res.results.length);
+      const banner = Math.floor(Math.random() * res.results.length);
 
-      setData(res.results[banner])
+      setData(res.results[banner]);
     }
-    result()
-  }, [])
+    result();
+  }, []);
 
-  const list = []
+  const list = [
+    {
+      title: "Originais",
+      movies: "movie/popular",
+    },
+    {
+      title: "Em breve",
+      movies: "movie/upcoming",
+    },
+    {
+      title: "Assistindo agora",
+      movies: "movie/now_playing",
+    },
+  ];
 
-  return(
+  return (
     <div className="pag-inicial">
       <Banner data={data} />
-      <Carrosel title="Originais da DevFlix" />
-      {
-        list.map((item) => <Carrosel title={item.title} movies={item.movies} />)
-      }
-      {/* <Carrosel title="Quero ser desenvolvedor Front-end" /> */}
-      {/* <Carrosel title="Não quero ser desenvolvedor Back-end" /> */}
+      {list.map((item) => (
+        <Carrosel title={item.title} movies={item.movies} />
+      ))}
     </div>
-  )
+  );
 }
