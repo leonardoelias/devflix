@@ -17,12 +17,17 @@ export function PaginaInicial() {
     result()
   }, [])
 
+  const list = []
+
   return(
     <div className="pag-inicial">
       <Banner data={data} />
       <Carrosel title="Originais da DevFlix" />
-      <Carrosel title="Quero ser desenvolvedor Front-end" />
-      <Carrosel title="Não quero ser desenvolvedor Back-end" />
+      {
+        list.map((item) => <Carrosel title={item.title} movies={item.movies} />)
+      }
+      {/* <Carrosel title="Quero ser desenvolvedor Front-end" /> */}
+      {/* <Carrosel title="Não quero ser desenvolvedor Back-end" /> */}
     </div>
   )
 }

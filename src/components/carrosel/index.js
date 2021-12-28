@@ -10,12 +10,11 @@ function Card(props) {
   return (
     <Link to="/details">
       <div className="card">
-        <img src={img} alt="borderdown" />
+        <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face${props.data.poster_path}`} alt={props.data.title} />
       </div>
     </Link>
   );
 }
-
 
 // 1 - Deixar o titulo fixo
 // 2 - Aparecer o titulo quando o estado estiver carregando
@@ -29,25 +28,27 @@ export function Carrosel(props) {
       const res = await request("discover/movie");
 
       setData(res.results);
-      setLoading(false)
+      setLoading(false);
     }
     result();
   }, []);
 
   return (
     <>
-      {loading ? (
-        "Loading "
-      ) : (
-        <section className="carrosel">
-          <h2>{props.title}</h2>
-          <div className="carrosel-container">
-            {data.map((item) => (
-              <Card data={item} />
-            ))}
-          </div>
-        </section>
-      )}
+      <div className="component-carrosel">
+        <h2>{props.title}</h2>
+        {loading ? (
+          "Loading "
+        ) : (
+          <section className="carrosel">
+            <div className="carrosel-container">
+              {data.map((item) => (
+                <Card data={item} />
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
     </>
   );
 }
